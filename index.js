@@ -189,14 +189,16 @@ submitBtn.addEventListener("click", () => {
         } else {
             if (score === quizData.length) {
                 quiz.innerHTML = `
-                <h2>You answered ${score}/${quizData.length} questions correctly!❤️</h2>
+                <h2>You answered ${score}/${quizData.length} questions correctly! <i class="fas fa-heart"></i></h2>
                 <button class="reload" onclick="location.reload()">Reload</button>
             `;
-            }
-            quiz.innerHTML = `
+            } else {
+                quiz.innerHTML = `
                 <h2>You answered ${score}/${quizData.length} questions correctly</h2>
                 <button class="reload" onclick="location.reload()">Reload</button>
             `;
+                console.log(score, quizData.length);
+            }
         }
     }
 });
